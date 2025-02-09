@@ -4,7 +4,7 @@ import { revalidateTag } from "next/cache";
 import { delay } from "@/util/delay";
 
 export async function createReviewAction(_: unknown, formData: FormData) {
-  await delay(200);
+  await delay(400);
 
   const bookId = formData.get("bookId")?.toString();
   const content = formData.get("content")?.toString();
