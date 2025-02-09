@@ -19,7 +19,7 @@ export default function ReviewEditor({ bookId }: { bookId: string }) {
   return (
     <section>
       <form className={style.form_container} action={formAction}>
-        <input name="bookId" value={bookId} type="hidden" />
+        <input name="bookId" value={bookId} type="hidden" readOnly />
         <textarea
           disabled={isPending}
           required
