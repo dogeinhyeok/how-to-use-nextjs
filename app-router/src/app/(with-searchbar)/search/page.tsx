@@ -21,6 +21,23 @@ async function SearchResult({ q }: { q: string }) {
   );
 }
 
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{
+    q?: string;
+  }>;
+}) {
+  // 현재 페이지 메타 데이터를 동적으로 생성하는 역할을 합니다.
+  const { q } = await searchParams;
+
+  return {
+    title: `한입 북스 검색 | ${q}`,
+    description: `${q}의 검색 결과입니다`,
+    images: ["/thumbnail.png"],
+  };
+}
+
 export default async function Page({
   searchParams,
 }: {
